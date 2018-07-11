@@ -123,10 +123,10 @@ public class FullDelDemoAdapter extends RecyclerView.Adapter<FullDelDemoAdapter.
 
         public FullDelDemoVH(View itemView) {
             super(itemView);
-            content = (TextView) itemView.findViewById(R.id.content);
-            btnDelete = (Button) itemView.findViewById(R.id.btnDelete);
-            btnUnRead = (Button) itemView.findViewById(R.id.btnUnRead);
-            btnTop = (Button) itemView.findViewById(R.id.btnTop);
+            content = itemView.findViewById(R.id.content);
+            btnDelete = itemView.findViewById(R.id.btnDelete);
+            btnUnRead = itemView.findViewById(R.id.btnUnRead);
+            btnTop = itemView.findViewById(R.id.btnTop);
         }
     }
 }

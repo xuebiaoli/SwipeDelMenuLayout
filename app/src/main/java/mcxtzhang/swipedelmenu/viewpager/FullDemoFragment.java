@@ -60,7 +60,7 @@ public class FullDemoFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.fragment_full_del_demo, container, false);
 
-        mRecyclerView = (RecyclerView) inflate.findViewById(R.id.rv);
+        mRecyclerView = inflate.findViewById(R.id.rv);
         //区分一下不同页面
         switch (mIndex) {
             case 0:
@@ -132,11 +132,8 @@ public class FullDemoFragment extends Fragment {
                             }
                             //notifyItemRangeChanged(0,holder.getAdapterPosition()+1);
                         }
-
                     }
                 });
-
-
             }
         };
 

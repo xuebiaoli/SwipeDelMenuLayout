@@ -14,7 +14,8 @@ public class LinearLayoutDelDemoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linear_layout_del_demo);
-        LinearLayout llContent = (LinearLayout) findViewById(R.id.llContent);
+
+        LinearLayout llContent = findViewById(R.id.llContent);
         llContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

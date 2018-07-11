@@ -35,7 +35,7 @@ public class FullDelDemoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_del_demo);
-        mRv = (RecyclerView) findViewById(R.id.rv);
+        mRv = findViewById(R.id.rv);
 
         initDatas();
         mAdapter = new FullDelDemoAdapter(this, mDatas);

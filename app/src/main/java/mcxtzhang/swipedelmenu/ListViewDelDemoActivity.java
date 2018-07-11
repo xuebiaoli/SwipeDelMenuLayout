@@ -24,7 +24,7 @@ public class ListViewDelDemoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mLv = (ListView) findViewById(R.id.test);
+        mLv = findViewById(R.id.test);
 
         initDatas();
         mLv.setAdapter(new CommonAdapter<SwipeBean>(this, mDatas, R.layout./*item_swipe_menu*/item_cst_swipe) {
