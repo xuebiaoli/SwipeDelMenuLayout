@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_linear_layout_del_demo"
     android:layout_width="match_parent"
@@ -23,25 +22,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="#456aaa"
-                android:text="大海那个蓝"/>
+                android:text="大海那个蓝" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="#efd40b"
-                android:text="小马那个黄"/>
+                android:text="小马那个黄" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="#d40bef"
-                android:text="match那个帅"/>
+                android:text="match那个帅" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#d40e18"
-                android:text="姨妈那个红"/>
+                android:text="姨妈那个红" />
         </LinearLayout>
 
         <Button
@@ -50,7 +49,7 @@
             android:layout_height="match_parent"
             android:background="#d9dee4"
             android:text="置顶"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnUnRead"
@@ -59,7 +58,7 @@
             android:background="#ecd50a"
             android:clickable="true"
             android:text="标记未读"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnDelete"
@@ -67,7 +66,7 @@
             android:layout_height="match_parent"
             android:background="@color/red_ff4a57"
             android:text="删除"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white" />
 
     </com.mcxtzhang.swipemenulib.SwipeMenuLayout>
 
@@ -87,25 +86,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="#031533"
-                android:text="大海那个蓝"/>
+                android:text="大海那个蓝" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="#595640"
-                android:text="小马那个黄"/>
+                android:text="小马那个黄" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="#cd6bda"
-                android:text="match那个帅"/>
+                android:text="match那个帅" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#6e2b2e"
-                android:text="姨妈那个红"/>
+                android:text="姨妈那个红" />
         </LinearLayout>
 
         <Button
@@ -114,7 +113,7 @@
             android:layout_height="match_parent"
             android:background="#d9dee4"
             android:text="置顶"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnUnRead2"
@@ -123,7 +122,7 @@
             android:background="#ecd50a"
             android:clickable="true"
             android:text="标记未读"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnDelete2"
@@ -131,7 +130,7 @@
             android:layout_height="match_parent"
             android:background="@color/red_ff4a57"
             android:text="删除"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white" />
 
     </com.mcxtzhang.swipemenulib.SwipeMenuLayout>
 

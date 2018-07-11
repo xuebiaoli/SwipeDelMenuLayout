@@ -1,6 +1,7 @@
 package mcxtzhang.swipedelmenu.FullDemo;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,14 +36,15 @@ public class FullDelDemoAdapter extends RecyclerView.Adapter<FullDelDemoAdapter.
         this.mDatas = mDatas;
     }
 
+    @NonNull
     @Override
-    public FullDelDemoVH onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FullDelDemoVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new FullDelDemoVH(mInfalter.inflate(R.layout.item_cst_swipe, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(final FullDelDemoVH holder, final int position) {
-        ((SwipeMenuLayout) holder.itemView).setIos(false).setLeftSwipe(position % 2 == 0 ? true : false);//这句话关掉IOS阻塞式交互效果 并依次打开左滑右滑
+    public void onBindViewHolder(@NonNull final FullDelDemoVH holder, final int position) {
+        ((SwipeMenuLayout) holder.itemView).setIos(false).setLeftSwipe(position % 2 == 0);//这句话关掉IOS阻塞式交互效果 并依次打开左滑右滑
 
         holder.content.setText(mDatas.get(position).name + (position % 2 == 0 ? "我右白虎" : "我左青龙"));
 

@@ -193,8 +193,6 @@ public class SwipeMenuLayout extends ViewGroup {
             }
         }
         ta.recycle();
-
-
     }
 
     @Override
@@ -645,5 +643,4 @@ public class SwipeMenuLayout extends ViewGroup {
             mViewCache = null;
         }
     }
-
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_launcher"
     android:layout_width="match_parent"
@@ -16,23 +15,23 @@
         android:id="@+id/rv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="完整的RecyclerViewDemo"/>
+        android:text="完整的RecyclerViewDemo" />
 
     <Button
         android:id="@+id/lv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ListView"/>
+        android:text="ListView" />
 
     <Button
         android:id="@+id/ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="线性布局LinearLayout"/>
+        android:text="线性布局LinearLayout" />
 
     <Button
         android:id="@+id/viewPager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ViewPager"/>
+        android:text="ViewPager" />
 </LinearLayout>
