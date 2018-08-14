@@ -280,8 +280,8 @@ public class SwipeMenuLayout extends ViewGroup {
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         //LogUtils.e(TAG, "onLayout() called with: " + "changed = [" + changed + "], l = [" + l + "], t = [" + t + "], r = [" + r + "], b = [" + b + "]");
         int childCount = getChildCount();
-        int left = 0 + getPaddingLeft();
-        int right = 0 + getPaddingLeft();
+        int left = getPaddingLeft();
+        int right = getPaddingLeft();
         for (int i = 0; i < childCount; i++) {
             View childView = getChildAt(i);
             if (childView.getVisibility() != GONE) {
@@ -296,7 +296,6 @@ public class SwipeMenuLayout extends ViewGroup {
                         childView.layout(right - childView.getMeasuredWidth(), getPaddingTop(), right, getPaddingTop() + childView.getMeasuredHeight());
                         right = right - childView.getMeasuredWidth();
                     }
-
                 }
             }
         }
