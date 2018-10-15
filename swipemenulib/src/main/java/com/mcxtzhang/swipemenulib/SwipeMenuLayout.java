@@ -47,12 +47,20 @@ import android.view.animation.OvershootInterpolator;
  * 2016 12 09,fix ListView快速滑动快速删除时，偶现菜单不消失的bug。
  * Created by zhangxutong .
  * Date: 16/04/24
+ *
+ * @author tiger
  */
 public class SwipeMenuLayout extends ViewGroup {
     private static final String TAG = "zxt/SwipeMenuLayout";
 
-    private int mScaleTouchSlop;//为了处理单击事件的冲突
-    private int mMaxVelocity;//计算滑动速度用
+    /**
+     * //为了处理单击事件的冲突
+     */
+    private int mScaleTouchSlop;
+    /**
+     * //计算滑动速度用
+     */
+    private int mMaxVelocity;
     private int mPointerId;//多点触摸只算第一根手指的速度
     private int mHeight;//自己的高度
     //右侧菜单宽度总和(最大滑动距离)
@@ -76,14 +84,18 @@ public class SwipeMenuLayout extends ViewGroup {
     private PointF mFirstP = new PointF();
     private boolean isUserSwiped;
 
-    //存储的是当前正在展开的View
+    /**
+     * //存储的是当前正在展开的View
+     */
     private static SwipeMenuLayout mViewCache;
 
-    //防止多只手指一起滑我的flag 在每次down里判断， touch事件结束清空
+    /**
+     * //防止多只手指一起滑我的flag 在每次down里判断， touch事件结束清空
+     */
     private static boolean isTouching;
 
-    private VelocityTracker mVelocityTracker;//滑动速度变量
-    private android.util.Log LogUtils;
+    //滑动速度变量
+    private VelocityTracker mVelocityTracker;
 
     /**
      * 右滑删除功能的开关,默认开
@@ -95,7 +107,10 @@ public class SwipeMenuLayout extends ViewGroup {
      */
     private boolean isIos;
 
-    private boolean iosInterceptFlag;//IOS类型下，是否拦截事件的flag
+    /**
+     * //IOS类型下，是否拦截事件的flag
+     */
+    private boolean iosInterceptFlag;
 
     /**
      * 20160929add 左滑右滑的开关,默认左滑打开菜单
@@ -257,15 +272,14 @@ public class SwipeMenuLayout extends ViewGroup {
         // Pretend that the linear layout has an exact size. This is the measured height of
         // ourselves. The measured height should be the max height of the children, changed
         // to accommodate the heightMeasureSpec from the parent
-        int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredHeight(),
-                MeasureSpec.EXACTLY);//以父布局高度构建一个Exactly的测量参数
+        //以父布局高度构建一个Exactly的测量参数
+        int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredHeight(), MeasureSpec.EXACTLY);
         for (int i = 0; i < count; ++i) {
             final View child = getChildAt(i);
             if (child.getVisibility() != GONE) {
                 MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
                 if (lp.height == LayoutParams.MATCH_PARENT) {
                     // Temporarily force children to reuse their old measured width
-                    // FIXME: this may not be right for something like wrapping text?
                     int oldWidth = lp.width;//measureChildWithMargins 这个函数会用到宽，所以要保存一下
                     lp.width = child.getMeasuredWidth();
                     // Remeasure with new dimensions
@@ -349,10 +363,6 @@ public class SwipeMenuLayout extends ViewGroup {
                         isUnMoved = false;
                     }
                     //2016 10 22 add , 仿QQ，侧滑菜单展开时，点击内容区域，关闭侧滑菜单。end
-                    //如果scroller还没有滑动结束 停止滑动动画
-/*                    if (!mScroller.isFinished()) {
-                        mScroller.abortAnimation();
-                    }*/
                     scrollBy((int) (gap), 0);//滑动使用scrollBy
                     //越界修正
                     if (isLeftSwipe) {//左滑
@@ -381,7 +391,7 @@ public class SwipeMenuLayout extends ViewGroup {
                     }
 
                     //add by 2016 09 11 ，IOS模式开启的话，且当前有侧滑菜单的View，且不是自己的，就该拦截事件咯。滑动也不该出现
-                    if (!iosInterceptFlag) {//且滑动了 才判断是否要收起、展开menu
+                    if (!iosInterceptFlag) { //且滑动了 才判断是否要收起、展开menu
                         //求伪瞬时速度
                         verTracker.computeCurrentVelocity(1000, mMaxVelocity);
                         final float velocityX = verTracker.getXVelocity(mPointerId);
@@ -493,7 +503,10 @@ public class SwipeMenuLayout extends ViewGroup {
      */
     private ValueAnimator mExpandAnim, mCloseAnim;
 
-    private boolean isExpand;//代表当前是否是展开状态 2016 11 03 add
+    /**
+     * //代表当前是否是展开状态 2016 11 03 add
+     */
+    private boolean isExpand;
 
     public void smoothExpand() {
         //Log.d(TAG, "smoothExpand() called" + this);
